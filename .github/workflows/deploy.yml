@@ -9,9 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger cPanel Git pull and deploy
+      - name: Trigger deploy via PHP webhook
         run: |
-          curl -s -X POST "https://srv22.swhc.ca:2083/execute/VersionControl/update" \
-            -H "Authorization: cpanel gmmlmb57:${{ secrets.CPANEL_API_TOKEN }}" \
-            -d "repository_root=%2Fhome%2Fgmmlmb57%2Fpublic_html" \
-            --insecure
+          curl -s -X POST "http://scellant-asphalte.ca/_deploy.php" \
+            -H "X-Deploy-Token: SA_DEPLOY_2024_SECRET" \
+            --max-time 40
