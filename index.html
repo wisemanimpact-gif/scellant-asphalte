@@ -349,25 +349,29 @@
     }
     .why h2 {
       font-family: var(--font-display);
-      font-size: 30px;
+      font-size: 36px;
       font-weight: 700;
       text-transform: uppercase;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
-    @media (min-width: 640px) { .why h2 { font-size: 42px; } }
+    @media (min-width: 640px) { .why h2 { font-size: 52px; } }
     .why-intro {
-      max-width: 700px;
-      margin: 0 auto 56px;
+      max-width: 800px;
+      margin: 0 auto 48px;
       text-align: center;
-      color: rgba(245,245,245,0.7);
-      font-size: 15px;
-      line-height: 1.75;
+      color: rgba(245,245,245,0.85);
+      font-size: 19px;
+      line-height: 1.8;
     }
     .why-intro strong { color: var(--fg); }
-    .cycle-grid {
-      display: grid;
-      gap: 24px;
+    .cycle-full-img {
+      width: 100%;
+      max-width: 1100px;
+      display: block;
+      margin: 0 auto 48px;
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
     }
     @media (min-width: 640px) { .cycle-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (min-width: 900px) { .cycle-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -778,56 +782,7 @@
       <span class="section-label-red">La science derrière les fissures</span>
       <h2>Pourquoi votre asphalte se fissure chaque printemps</h2>
       <p class="why-intro">Au Québec, on compte en moyenne <strong>80 cycles de gel-dégel par hiver</strong>. Chaque cycle est une attaque silencieuse qui détruit votre asphalte de l'intérieur — sans protection, l'eau s'infiltre, gèle, se dilate de <strong>9%</strong> et fait éclater la structure même du revêtement.</p>
-      <div class="cycle-grid">
-        <div class="cycle-card">
-          <!-- Remplacez src par votre photo d'asphalte mouillé / fissures automne -->
-          <div class="cycle-photo-placeholder">
-            <span>🌧</span>
-            <small>Ajouter une photo</small>
-          </div>
-          <div class="cycle-card-body">
-            <div class="cycle-num">01</div>
-            <h4>Automne — L'eau s'infiltre</h4>
-            <p>L'asphalte est poreux. Pluie et humidité pénètrent dans les micro-pores et s'accumulent dans la structure du revêtement non protégé.</p>
-          </div>
-        </div>
-        <div class="cycle-card">
-          <!-- Remplacez src par votre photo d'asphalte gelé / fissures hiver -->
-          <div class="cycle-photo-placeholder">
-            <span>❄️</span>
-            <small>Ajouter une photo</small>
-          </div>
-          <div class="cycle-card-body">
-            <div class="cycle-num">02</div>
-            <h4>Hiver — La glace fait éclater</h4>
-            <p>Sous 0°C, l'eau emprisonnée gèle et prend 9% de volume. Cette pression interne crée et agrandit les fissures, rendant la surface encore plus vulnérable.</p>
-          </div>
-        </div>
-        <div class="cycle-card">
-          <!-- Remplacez src par votre photo de fissures printanières / nids-de-poule -->
-          <div class="cycle-photo-placeholder">
-            <span>🌡️</span>
-            <small>Ajouter une photo</small>
-          </div>
-          <div class="cycle-card-body">
-            <div class="cycle-num">03</div>
-            <h4>Printemps — Le sel amplifie</h4>
-            <p>Les sels de déglaçage accélèrent la dégradation chimique des liants bitumineux. L'asphalte perd sa flexibilité et s'émiette progressivement.</p>
-          </div>
-        </div>
-        <div class="cycle-card">
-          <!-- Remplacez src par votre photo d'asphalte grisé / oxydé en été -->
-          <div class="cycle-photo-placeholder">
-            <span>☀️</span>
-            <small>Ajouter une photo</small>
-          </div>
-          <div class="cycle-card-body">
-            <div class="cycle-num">04</div>
-            <h4>Été — Le soleil oxyde</h4>
-            <p>Les UV et la chaleur accélèrent l'oxydation des bitumes. Sans protection, l'asphalte grisonne, se fragilise et les réparations coûteuses deviennent inévitables.</p>
-          </div>
-        </div>
-      </div>
+      <img src="cycle.png" alt="Les 4 saisons de dégradation de l'asphalte : automne, hiver, printemps, été" class="cycle-full-img">
       <div class="why-callout">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         <p><strong>Refaire une entrée de garage coûte entre 5 000 $ et 15 000 $.</strong> Notre traitement, une fraction de ce prix, peut repousser ce moment de 5 à 10 ans. Les nouvelles asphaltes sont particulièrement vulnérables — les mélanges modernes ont une porosité accrue. Sceller dans les 12 à 24 premiers mois est la meilleure protection que vous puissiez offrir à votre investissement.</p>
