@@ -125,14 +125,24 @@
     @media (min-width: 640px) { .hero h1 { font-size: 72px; } }
 
     /* ── Photo grid ── */
+    .photo-text {
+      margin-top: 40px;
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--brand-red);
+      line-height: 1.2;
+      text-align: center;
+    }
+    @media (min-width: 640px) { .photo-text { font-size: 48px; } }
     .photo-grid {
       display: grid;
       gap: 16px;
-      margin-top: 40px;
-      align-items: center;
+      margin-top: 24px;
     }
     @media (min-width: 768px) {
-      .photo-grid { grid-template-columns: 1fr auto 1fr; }
+      .photo-grid { grid-template-columns: 1fr 1fr; }
     }
     .photo-card {
       overflow: hidden;
@@ -146,16 +156,6 @@
       object-fit: cover;
     }
     @media (min-width: 640px) { .photo-card img { height: 448px; } }
-    .photo-text {
-      padding: 16px 0;
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--brand-red);
-      line-height: 1.3;
-    }
-    @media (min-width: 640px) { .photo-text { font-size: 24px; padding: 16px; } }
 
     /* ── CTA Button ── */
     .cta-btn {
@@ -451,6 +451,15 @@
       border-top: 1px solid rgba(255,255,255,0.05);
     }
     .blog-inner { max-width: 1024px; margin: 0 auto; }
+    .blog-header-photo {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      margin-bottom: 48px;
+      display: block;
+    }
     .blog h2 {
       font-family: var(--font-display);
       font-size: 30px;
@@ -475,12 +484,14 @@
     }
     .blog-card:hover { border-color: rgba(214,69,69,0.35); transform: translateY(-3px); }
     .blog-card-icon {
-      height: 140px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
-      background: linear-gradient(135deg, #1f1f1f, #2a1a1a);
+      height: 200px;
+      overflow: hidden;
+    }
+    .blog-card-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .blog-card-body { padding: 24px; }
     .blog-tag {
@@ -661,20 +672,20 @@
   <!-- Hero -->
   <header class="hero">
     <div class="hero-inner">
-      <img src="logo-sa.png" alt="Logo Scellant-Asphalte" class="hero-logo">
+      <img src="assets/logo-sa.png" alt="Logo Scellant-Asphalte" class="hero-logo">
       <div class="hero-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         Votre expert sur la Rive-Nord
       </div>
       <h1>Scellant <span>Asphalte</span></h1>
 
+      <p class="photo-text">Job de qualité garantie<br>ou vous payez pas</p>
       <div class="photo-grid">
         <div class="photo-card">
-          <img src="avant-apres-2.png" alt="Avant après scellant asphalte">
+          <img src="assets/avant-apres-2.png" alt="Avant après scellant asphalte">
         </div>
-        <p class="photo-text">Job de qualité garantie<br>ou vous payez pas</p>
         <div class="photo-card">
-          <img src="avant-apres-3.png" alt="Avant après scellant asphalte">
+          <img src="assets/avant-apres-3.png" alt="Avant après scellant asphalte">
         </div>
       </div>
 
@@ -703,7 +714,7 @@
   <section class="process">
     <div class="process-inner">
       <div class="process-photo">
-        <img src="asphalte-bitume.png" alt="Application de scellant à base de bitume">
+        <img src="assets/asphalte-bitume.png" alt="Application de scellant à base de bitume">
       </div>
       <h3>Application de scellant à base de bitume</h3>
       <div class="cards">
@@ -782,7 +793,7 @@
       <span class="section-label-red">La science derrière les fissures</span>
       <h2>Pourquoi votre asphalte se fissure chaque printemps</h2>
       <p class="why-intro">Au Québec, on compte en moyenne <strong>80 cycles de gel-dégel par hiver</strong>. Chaque cycle est une attaque silencieuse qui détruit votre asphalte de l'intérieur — sans protection, l'eau s'infiltre, gèle, se dilate de <strong>9%</strong> et fait éclater la structure même du revêtement.</p>
-      <img src="cycle.png" alt="Les 4 saisons de dégradation de l'asphalte : automne, hiver, printemps, été" class="cycle-full-img">
+      <img src="assets/cycle.png" alt="Les 4 saisons de dégradation de l'asphalte : automne, hiver, printemps, été" class="cycle-full-img">
       <div class="why-callout">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         <p><strong>Refaire une entrée de garage coûte entre 5 000 $ et 15 000 $.</strong> Notre traitement, une fraction de ce prix, peut repousser ce moment de 5 à 10 ans. Les nouvelles asphaltes sont particulièrement vulnérables — les mélanges modernes ont une porosité accrue. Sceller dans les 12 à 24 premiers mois est la meilleure protection que vous puissiez offrir à votre investissement.</p>
@@ -793,11 +804,16 @@
   <!-- Blog -->
   <section class="blog" id="blog">
     <div class="blog-inner">
+      <!-- Remplacez blog-entretien.jpg par votre photo -->
+      <img src="blog-entretien.jpg" alt="Entretien asphalte" class="blog-header-photo">
       <span class="section-label-red">Conseils & Articles</span>
       <h2>Tout savoir sur l'entretien de votre asphalte</h2>
       <div class="blog-grid">
         <div class="blog-card">
-          <div class="blog-card-icon">❄️</div>
+          <div class="blog-card-icon">
+            <!-- Mettez votre photo ici : blog-gel-degel.jpg -->
+            <img src="blog-gel-degel.jpg" alt="Fissures asphalte gel-dégel">
+          </div>
           <div class="blog-card-body">
             <span class="blog-tag">Guide complet</span>
             <h3>Gel-dégel : la vraie cause des fissures au Québec</h3>
@@ -806,7 +822,10 @@
           </div>
         </div>
         <div class="blog-card">
-          <div class="blog-card-icon">🗓️</div>
+          <div class="blog-card-icon">
+            <!-- Mettez votre photo ici : blog-frequence.jpg -->
+            <img src="blog-frequence.jpg" alt="Fréquence scellant asphalte">
+          </div>
           <div class="blog-card-body">
             <span class="blog-tag">Fréquence</span>
             <h3>À quelle fréquence faut-il sceller son asphalte?</h3>
@@ -815,7 +834,10 @@
           </div>
         </div>
         <div class="blog-card">
-          <div class="blog-card-icon">☀️</div>
+          <div class="blog-card-icon">
+            <!-- Mettez votre photo ici : blog-periode.jpg -->
+            <img src="blog-periode.jpg" alt="Meilleure période scellant asphalte">
+          </div>
           <div class="blog-card-body">
             <span class="blog-tag">Timing</span>
             <h3>Quelle est la meilleure période pour sceller au Québec?</h3>
