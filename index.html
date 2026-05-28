@@ -482,7 +482,7 @@
       overflow: hidden;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .blog-card:hover { border-color: rgba(214,69,69,0.35); transform: translateY(-3px); }
+    .blog-card:hover { border-color: rgba(214,69,69,0.35); transform: translateY(-3px); cursor: pointer; }
     .blog-card-icon {
       height: 200px;
       overflow: hidden;
@@ -648,6 +648,14 @@
     .footer a:hover { color: var(--fg); }
     .footer a svg { width: 18px; height: 18px; }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LW0QL2MGTY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LW0QL2MGTY');
+  </script>
 </head>
 <body>
 
@@ -809,42 +817,36 @@
       <span class="section-label-red">Conseils & Articles</span>
       <h2>Tout savoir sur l'entretien de votre asphalte</h2>
       <div class="blog-grid">
-        <div class="blog-card">
+        <a href="pourquoi-asphalte-fissure-quebec.html" class="blog-card">
           <div class="blog-card-icon">
-            <!-- Mettez votre photo ici : blog-gel-degel.jpg -->
             <img src="assets/blog-gel-degel.jpg" alt="Fissures asphalte gel-dégel">
           </div>
           <div class="blog-card-body">
             <span class="blog-tag">Guide complet</span>
-            <h3>Gel-dégel : la vraie cause des fissures au Québec</h3>
             <p>80 cycles par hiver, 9% de dilatation de la glace — voici la science complète derrière la dégradation de l'asphalte et comment notre scellant bitume bloque le processus.</p>
-            <a href="#pourquoi" class="blog-link">Lire la section <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <span class="blog-link">Lire l'article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
-        </div>
-        <div class="blog-card">
+        </a>
+        <a href="quand-sceller-asphalte.html" class="blog-card">
           <div class="blog-card-icon">
-            <!-- Mettez votre photo ici : blog-frequence.jpg -->
             <img src="assets/blog-frequence.jpg" alt="Fréquence scellant asphalte">
           </div>
           <div class="blog-card-body">
             <span class="blog-tag">Fréquence</span>
-            <h3>À quelle fréquence faut-il sceller son asphalte?</h3>
             <p>La règle : tous les 2 à 3 ans avec un produit professionnel à base de bitume. Les produits du commerce en magasin big-box durent 6 à 12 mois — la différence est majeure.</p>
-            <a href="#faq" class="blog-link">Voir la FAQ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <span class="blog-link">Lire l'article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
-        </div>
-        <div class="blog-card">
+        </a>
+        <a href="reparation-fissures-asphalte.html" class="blog-card">
           <div class="blog-card-icon">
-            <!-- Mettez votre photo ici : blog-periode.jpg -->
             <img src="assets/blog-periode.jpg" alt="Meilleure période scellant asphalte">
           </div>
           <div class="blog-card-body">
             <span class="blog-tag">Timing</span>
-            <h3>Quelle est la meilleure période pour sceller au Québec?</h3>
             <p>De mai à septembre, avec une préférence pour juin–août. Il faut minimum 10°C et aucune pluie dans les 48 heures. N'attendez pas l'automne — l'asphalte doit sécher avant les gelées.</p>
-            <a href="#contact" class="blog-link">Prendre rendez-vous <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            <span class="blog-link">Lire l'article <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -963,3 +965,4 @@
   </script>
 </body>
 </html>
+                                                                                                                                                                                                                                                                                                                                 
