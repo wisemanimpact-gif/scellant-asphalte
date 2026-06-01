@@ -3,8 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Scellant-Asphalte — Protection et scellant à base de bitume | Rive-Nord</title>
-  <meta name="description" content="Spécialistes du scellant à base de bitume haut de gamme sur la Rive-Nord. Prolongez la durée de vie de votre asphalte. Appelez le 438-304-8896.">
+  <title>Scellant d'asphalte Rive-Nord | Bitume professionnel | Blainville, Sainte-Thérèse, Saint-Eustache</title>
+  <meta name="description" content="Scellant d'asphalte professionnel à base de bitume sur la Rive-Nord et les Laurentides. Réparation de fissures, protection durable, soumission gratuite. Satisfait ou vous ne payez pas. 438-304-8896.">
+  <link rel="canonical" href="https://scellant-asphalte.ca/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Scellant-Asphalte",
+    "description": "Scellant d'asphalte professionnel à base de bitume sur la Rive-Nord et les Laurentides. Réparation de fissures, protection durable.",
+    "telephone": "+14383048896",
+    "url": "https://scellant-asphalte.ca",
+    "areaServed": ["Blainville","Sainte-Thérèse","Saint-Eustache","Boisbriand","Mirabel","Terrebonne","Mascouche","Rosemère","Laval","Saint-Jérôme"],
+    "priceRange": "$$",
+    "image": "https://scellant-asphalte.ca/assets/logo-sa.png",
+    "sameAs": ["https://www.facebook.com/scellant.asphalte"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Combien coûte le scellant d'asphalte pour une entrée résidentielle?","acceptedAnswer":{"@type":"Answer","text":"Pour une entrée résidentielle standard (40 à 80 m²), les prix varient généralement entre 150 $ et 500 $. On vous donne toujours un prix fixe avant de commencer."}},
+      {"@type":"Question","name":"À quelle fréquence faut-il faire sceller son asphalte?","acceptedAnswer":{"@type":"Answer","text":"Avec un scellant professionnel à base de bitume, on recommande un traitement tous les 2 à 3 ans. Une asphalte neuve devrait être scellée dans les 12 à 24 premiers mois."}},
+      {"@type":"Question","name":"Quelle est la différence entre le scellant du commerce et le scellant professionnel?","acceptedAnswer":{"@type":"Answer","text":"Les produits à base d'eau vendus en quincaillerie durent 6 à 12 mois. Notre scellant bitume pénètre dans les pores de l'asphalte, reconstitue les liants d'origine et dure 2 à 4 ans."}},
+      {"@type":"Question","name":"Combien de temps faut-il attendre avant de stationner après le scellage?","acceptedAnswer":{"@type":"Answer","text":"Par temps chaud (20-30°C) : toucher sec en 2 à 4 heures, marcher après 24 heures, stationner un véhicule après 48 à 72 heures."}},
+      {"@type":"Question","name":"Est-ce que vous offrez une garantie?","acceptedAnswer":{"@type":"Answer","text":"Oui. Notre engagement est clair : si tu n'es pas satisfait du résultat, tu ne paies pas."}}
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -171,18 +199,229 @@
       margin-top: 40px;
       box-shadow: 0 10px 40px -10px rgba(214,69,69,0.5);
       transition: filter 0.2s;
+      cursor: pointer;
+      border: none;
+      font-family: var(--font-body);
     }
     .cta-btn:hover { filter: brightness(1.1); }
     .cta-btn svg { width: 20px; height: 20px; }
 
+    /* ── Hero estimation CTA ── */
+    .hero-cta-wrap { margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .cta-estimation {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--brand-red);
+      color: #fff;
+      padding: 18px 36px;
+      border-radius: 999px;
+      font-size: 19px;
+      font-weight: 700;
+      box-shadow: 0 10px 40px -10px rgba(214,69,69,0.6);
+      transition: filter 0.2s, transform 0.15s;
+      cursor: pointer;
+      border: none;
+      font-family: var(--font-body);
+    }
+    .cta-estimation:hover { filter: brightness(1.1); transform: translateY(-2px); }
+    .cta-estimation svg { width: 22px; height: 22px; flex-shrink: 0; }
+
     .hero-sub {
-      margin-top: 24px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: rgba(245,245,245,0.6);
+      color: rgba(245,245,245,0.5);
     }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: #1f1f1f;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 40px 32px;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px;
+      background: none; border: none; cursor: pointer;
+      color: rgba(245,245,245,0.4); font-size: 22px; line-height: 1;
+      transition: color 0.2s;
+    }
+    .modal-close:hover { color: var(--fg); }
+    .modal h2 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .modal h2 span { color: var(--brand-red); }
+    .modal-subtitle {
+      font-size: 14px;
+      color: rgba(245,245,245,0.55);
+      margin-bottom: 28px;
+    }
+    /* Call option */
+    .modal-call {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(214,69,69,0.12);
+      border: 1px solid rgba(214,69,69,0.35);
+      border-radius: 14px;
+      padding: 18px 20px;
+      color: var(--fg);
+      font-weight: 700;
+      font-size: 17px;
+      margin-bottom: 24px;
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .modal-call:hover { background: rgba(214,69,69,0.22); }
+    .modal-call svg { width: 22px; height: 22px; color: var(--brand-red); flex-shrink: 0; }
+    .modal-call small { display: block; font-size: 12px; font-weight: 400; color: rgba(245,245,245,0.5); margin-top: 2px; }
+    /* Divider */
+    .modal-divider {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 12px; text-transform: uppercase; letter-spacing: 2px;
+      color: rgba(245,245,245,0.3); margin-bottom: 24px;
+    }
+    .modal-divider::before, .modal-divider::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08);
+    }
+    /* Form */
+    .modal-form { display: flex; flex-direction: column; gap: 14px; }
+    .modal-form input, .modal-form textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 13px 16px;
+      color: var(--fg);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      resize: none;
+    }
+    .modal-form input::placeholder, .modal-form textarea::placeholder { color: rgba(245,245,245,0.3); }
+    .modal-form input:focus, .modal-form textarea:focus { border-color: rgba(214,69,69,0.5); }
+    .modal-submit {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--brand-red);
+      color: #fff; border: none; border-radius: 999px;
+      padding: 15px 28px;
+      font-size: 15px; font-weight: 700;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: filter 0.2s;
+      margin-top: 4px;
+    }
+    .modal-submit:hover { filter: brightness(1.1); }
+    .modal-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+    .modal-success {
+      text-align: center; padding: 16px 0;
+      color: #4ade80; font-weight: 600;
+      display: none;
+    }
+
+    /* ── Benefits strip ── */
+    .benefits {
+      background: var(--card);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 40px 16px;
+    }
+    .benefits-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .benefits-inner { grid-template-columns: repeat(4, 1fr); }
+    }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .benefit-item svg {
+      width: 28px; height: 28px;
+      color: var(--brand-red);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .benefit-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--fg);
+      margin-bottom: 4px;
+    }
+    .benefit-item span {
+      font-size: 12px;
+      color: rgba(245,245,245,0.5);
+      line-height: 1.4;
+    }
+
+    /* ── Zone desservie ── */
+    .zone {
+      padding: 80px 16px;
+      background: rgba(0,0,0,0.4);
+    }
+    .zone-inner {
+      max-width: 1024px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .zone h2 {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    @media (min-width: 640px) { .zone h2 { font-size: 36px; } }
+    .zone p { color: rgba(245,245,245,0.7); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .zone-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 32px;
+    }
+    @media (min-width: 640px) { .zone-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 900px) { .zone-grid { grid-template-columns: repeat(4, 1fr); } }
+    .zone-city {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 14px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(245,245,245,0.8);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: block;
+    }
+    .zone-city:hover { border-color: rgba(214,69,69,0.4); color: var(--fg); }
+    .zone-city small { display: block; font-weight: 400; font-size: 11px; color: rgba(245,245,245,0.4); margin-top: 2px; }
 
     /* ── Headline strip ── */
     .headline {
@@ -667,10 +906,12 @@
         <span>438-304-8896</span>
       </a>
       <ul class="nav-links">
+        <li><a href="services-scellant-asphalte.html">Services</a></li>
         <li><a href="#pourquoi">Pourquoi sceller?</a></li>
         <li><a href="#avis">Avis</a></li>
         <li><a href="#blog">Conseils</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <span class="location">Votre expert sur la Rive-Nord, QC</span>
@@ -683,11 +924,11 @@
       <img src="assets/logo-sa.png" alt="Logo Scellant-Asphalte" class="hero-logo">
       <div class="hero-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Votre expert sur la Rive-Nord
+        Rive-Nord · Laurentides · Lanaudière
       </div>
-      <h1>Scellant <span>Asphalte</span></h1>
+      <h1>Scellant d'asphalte <span>professionnel</span></h1>
 
-      <p class="photo-text">Job de qualité garantie<br>ou vous payez pas</p>
+      <p class="photo-text">Job de qualité garantie<br>ou tu paies pas</p>
       <div class="photo-grid">
         <div class="photo-card">
           <img src="assets/avant-apres-2.png" alt="Avant après scellant asphalte">
@@ -697,25 +938,62 @@
         </div>
       </div>
 
-      <a href="tel:+14383048896" class="cta-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        438-304-8896
-      </a>
-      <p class="hero-sub">Contactez-nous pour une soumission gratuite</p>
+      <div class="hero-cta-wrap">
+        <button class="cta-estimation" onclick="document.getElementById('estimModal').classList.add('open')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Estimation gratuite en moins d'une heure
+        </button>
+        <p class="hero-sub">Rive-Nord · Réponse rapide garantie</p>
+      </div>
     </div>
   </header>
 
-  <!-- Headline -->
+  <!-- Bénéfices -->
   <section class="headline">
-    <h2>Rehaussez la durabilité de votre asphalte.</h2>
+    <h2>Protection d'asphalte · Bitume professionnel · Rive-Nord</h2>
+  </section>
+
+  <!-- Bénéfices visuels -->
+  <section class="benefits">
+    <div class="benefits-inner">
+      <div class="benefit-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div>
+          <strong>Protégé contre le gel-dégel</strong>
+          <span>80 cycles par hiver au Québec</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <div>
+          <strong>Dure 2 à 4 ans</strong>
+          <span>Vs 6-12 mois pour les produits du commerce</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div>
+          <strong>Économise 5 000 $ à 15 000 $</strong>
+          <span>Repousse le repavage de 5 à 10 ans</span>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <div>
+          <strong>Satisfait ou tu ne paies pas</strong>
+          <span>Garantie sans condition</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Intro -->
   <section class="intro">
-    <p class="intro-label">Nouvelles asphaltes</p>
-    <h3>Spécialistes de la protection de votre asphalte</h3>
-    <p>Chez <strong>scellant-asphalte</strong>, nous nous spécialisons dans la protection de votre asphalte.</p>
-    <p>Depuis quelques années, nous constatons un déclin sur la porosité des nouvelles asphaltes. Grâce à notre scellant de bitume haut de gamme, reconnu comme le plus performant sur le marché, nous prolongeons significativement la durée de vie de votre asphalte.</p>
+    <p class="intro-label">Spécialistes bitume · Rive-Nord depuis 2019</p>
+    <h2>Ton asphalte mérite mieux que les produits du commerce</h2>
+    <p>Chez <strong>Scellant-Asphalte</strong>, on protège les entrées résidentielles et stationnements commerciaux sur la Rive-Nord, les Laurentides et Lanaudière. Notre scellant à base de bitume haut de gamme pénètre dans les pores de l'asphalte, reconstitue les liants d'origine et crée une barrière imperméable qui dure réellement.</p>
+    <p>On a vu trop de propriétaires dépenser des milliers pour refaire une entrée qui aurait pu durer 10 ans de plus avec un entretien régulier. C'est pour ça qu'on fait ce qu'on fait.</p>
+    <p><strong>Zone desservie :</strong> Blainville · Sainte-Thérèse · Saint-Eustache · Boisbriand · Mirabel · Terrebonne · Mascouche · Rosemère · Laval · Saint-Jérôme · et environs</p>
   </section>
 
   <!-- Process -->
@@ -724,19 +1002,19 @@
       <div class="process-photo">
         <img src="assets/asphalte-bitume.png" alt="Application de scellant à base de bitume">
       </div>
-      <h3>Application de scellant à base de bitume</h3>
+      <h2>Notre processus en 3 étapes</h2>
       <div class="cards">
         <div class="card">
-          <h4>Préparation</h4>
-          <p>Nettoyage des surfaces pour maximiser l'adhésion du scellant.</p>
+          <h3>Étape 1 — Préparation</h3>
+          <p>Nettoyage complet de la surface à l'air comprimé pour maximiser l'adhésion du scellant. On retire toute la poussière, les débris et la végétation des fissures.</p>
         </div>
         <div class="card">
-          <h4>Réparation durable de fissures</h4>
-          <p>Les fissures sont nettoyées et remplies avec du caoutchouc liquéfié à haute température afin d'assurer une réparation durable.</p>
+          <h3>Étape 2 — Réparation des fissures</h3>
+          <p>Les fissures sont nettoyées et remplies avec du caoutchouc liquide chauffé à haute température — le seul procédé qui scelle durablement sans que la fissure ne réapparaisse au prochain hiver.</p>
         </div>
         <div class="card">
-          <h4>Application de scellant à base de bitume</h4>
-          <p>Notre procédure d'application garantit une saturation et l'épaisseur du scellant afin d'assurer sa longévité. Les découpes sont faites à la main.</p>
+          <h3>Étape 3 — Application du scellant bitume</h3>
+          <p>Notre procédure garantit la saturation et l'épaisseur du scellant pour assurer sa longévité. Les découpes sont faites à la main. Résultat : une finition noire et uniforme.</p>
         </div>
       </div>
     </div>
@@ -795,16 +1073,39 @@
     </div>
   </section>
 
+  <!-- Zone desservie -->
+  <section class="zone" id="zone">
+    <div class="zone-inner">
+      <span class="section-label-red" style="display:block;margin-bottom:12px;">Notre territoire</span>
+      <h2>Zone desservie</h2>
+      <p>On travaille sur la Rive-Nord, les Laurentides et Lanaudière. Pas certain si on couvre ta région? Appelle-nous — on se déplace souvent plus loin que prévu.</p>
+      <div class="zone-grid">
+        <a href="scellant-asphalte-blainville.html" class="zone-city">Blainville<small>Rive-Nord</small></a>
+        <a href="scellant-asphalte-sainte-therese.html" class="zone-city">Sainte-Thérèse<small>Rive-Nord</small></a>
+        <a href="scellant-asphalte-saint-eustache.html" class="zone-city">Saint-Eustache<small>Rive-Nord</small></a>
+        <a href="scellant-asphalte-boisbriand.html" class="zone-city">Boisbriand<small>Rive-Nord</small></a>
+        <a href="scellant-asphalte-mirabel.html" class="zone-city">Mirabel<small>Laurentides</small></a>
+        <a href="scellant-asphalte-terrebonne.html" class="zone-city">Terrebonne<small>Lanaudière</small></a>
+        <a href="scellant-asphalte-laval.html" class="zone-city">Laval<small>Rive-Nord</small></a>
+        <a href="scellant-asphalte-saint-jerome.html" class="zone-city">Saint-Jérôme<small>Laurentides</small></a>
+        <span class="zone-city" style="cursor:default;">Rosemère<small>Rive-Nord</small></span>
+        <span class="zone-city" style="cursor:default;">Lorraine<small>Rive-Nord</small></span>
+        <span class="zone-city" style="cursor:default;">Mascouche<small>Lanaudière</small></span>
+        <span class="zone-city" style="cursor:default;">Deux-Montagnes<small>Rive-Nord</small></span>
+      </div>
+    </div>
+  </section>
+
   <!-- Pourquoi ça fissure -->
   <section class="why" id="pourquoi">
     <div class="why-inner">
       <span class="section-label-red">La science derrière les fissures</span>
-      <h2>Pourquoi votre asphalte se fissure chaque printemps</h2>
-      <p class="why-intro">Au Québec, on compte en moyenne <strong>80 cycles de gel-dégel par hiver</strong>. Chaque cycle est une attaque silencieuse qui détruit votre asphalte de l'intérieur — sans protection, l'eau s'infiltre, gèle, se dilate de <strong>9%</strong> et fait éclater la structure même du revêtement.</p>
+      <h2>Pourquoi ton asphalte se fissure chaque printemps</h2>
+      <p class="why-intro">Au Québec, on compte en moyenne <strong>80 cycles de gel-dégel par hiver</strong>. Chaque cycle est une attaque silencieuse qui détruit ton asphalte de l'intérieur — sans protection, l'eau s'infiltre, gèle, se dilate de <strong>9 %</strong> et fait éclater la structure même du revêtement.</p>
       <img src="assets/cycle.png" alt="Les 4 saisons de dégradation de l'asphalte : automne, hiver, printemps, été" class="cycle-full-img">
       <div class="why-callout">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <p><strong>Refaire une entrée de garage coûte entre 5 000 $ et 15 000 $.</strong> Notre traitement, une fraction de ce prix, peut repousser ce moment de 5 à 10 ans. Les nouvelles asphaltes sont particulièrement vulnérables — les mélanges modernes ont une porosité accrue. Sceller dans les 12 à 24 premiers mois est la meilleure protection que vous puissiez offrir à votre investissement.</p>
+        <p><strong>Refaire une entrée de garage coûte entre 5 000 $ et 15 000 $.</strong> Notre traitement, une fraction de ce prix, peut repousser ce moment de 5 à 10 ans. Les nouvelles asphaltes sont particulièrement vulnérables — les mélanges modernes ont une porosité accrue. Sceller dans les 12 à 24 premiers mois est la meilleure protection que tu puisses offrir à ton investissement.</p>
       </div>
     </div>
   </section>
@@ -854,13 +1155,20 @@
   <!-- FAQ -->
   <section class="faq" id="faq">
     <span class="section-label-red" style="display:block;text-align:center;">Questions fréquentes</span>
-    <h2>Vos questions, nos réponses</h2>
+    <h2>Tes questions, nos réponses</h2>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Combien ça coûte de sceller une entrée asphaltée?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Pour une entrée résidentielle standard (environ 40 à 80 m²), les prix varient généralement entre 150 $ et 500 $. Le prix dépend de la superficie, de l'état de l'asphalte et des réparations nécessaires. On te donne toujours un prix fixe avant de commencer — aucune surprise.</div>
+    </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
         Quelle est la différence entre le scellant bitume et les produits du commerce?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
-      <div class="faq-a">Les produits à base d'eau vendus en quincaillerie offrent une protection superficielle de 6 à 12 mois. Notre scellant professionnel à base de bitume pénètre en profondeur dans les pores de l'asphalte, reconstitue les liants d'origine et crée une barrière imperméable qui dure 2 à 4 ans.</div>
+      <div class="faq-a">Les produits à base d'eau vendus en quincaillerie offrent une protection superficielle de 6 à 12 mois. Notre scellant professionnel à base de bitume pénètre en profondeur dans les pores de l'asphalte, reconstitue les liants d'origine et crée une barrière imperméable qui dure 2 à 4 ans. C'est la même matière que ton asphalte lui-même.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
@@ -871,47 +1179,89 @@
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        Combien de temps avant de pouvoir stationner sur l'asphalte?
+        Combien de temps faut-il attendre avant de stationner sur l'asphalte?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
-      <div class="faq-a">Par temps ensoleillé (20–30°C), le scellant est sec au toucher en 2 à 4 heures. On recommande d'attendre 24 heures avant de marcher dessus et 48 à 72 heures avant de stationner un véhicule. Nous vous donnons toujours des instructions précises selon la météo du jour.</div>
+      <div class="faq-a">Par temps chaud (20–30 °C) : sec au toucher en 2 à 4 heures, marche possible après 24 heures, stationnement d'un véhicule après 48 à 72 heures. On te donne toujours des consignes précises selon la météo du jour.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
         Le scellant peut-il réparer les grosses fissures?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
-      <div class="faq-a">Le scellant seul ne comble pas les grandes fissures. C'est pourquoi notre processus inclut une étape de réparation au caoutchouc liquide chauffé à haute température avant l'application du scellant. Pour les nids-de-poule ou affaissements importants, une réparation à l'asphalte à chaud peut être nécessaire — on vous guide vers la bonne solution.</div>
+      <div class="faq-a">Le scellant seul ne comble pas les grandes fissures. C'est pourquoi notre processus inclut une étape de réparation au caoutchouc liquide chauffé à haute température avant l'application du scellant. Pour les nids-de-poule ou affaissements importants, on t'explique la meilleure solution avant de commencer.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Est-ce que vous réparez les nids-de-poule?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Oui. On peut réparer la plupart des dommages courants : nids-de-poule, bords effrités, affaissements. Pour les cas plus importants, on évalue avec toi si la réparation est suffisante ou si un repavage partiel est nécessaire.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Quelle est la meilleure période pour sceller son asphalte au Québec?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">De mai à septembre, avec une préférence pour juin, juillet et août. Il faut minimum 10 °C et aucune pluie dans les 48 heures suivant l'application. Évite d'attendre trop tard en automne — l'asphalte doit sécher complètement avant les premières gelées.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Est-ce que le scellant change la couleur de l'asphalte?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Oui — le scellant bitume redonne à l'asphalte sa couleur noire d'origine. Une entrée grisée ou blanchie retrouve un aspect neuf après l'application. L'effet est visible immédiatement.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Dois-je être présent lors des travaux?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Non, tu n'as pas besoin d'être là. Il faut simplement que l'accès soit libre, que les véhicules aient été déplacés et que la surface soit sèche. On te contacte avant et après pour confirmer.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Faites-vous le scellant pour les stationnements commerciaux?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Oui, on fait des travaux résidentiels et commerciaux. Immeubles à revenus, stationnements de commerces, garages industriels — on s'adapte à tes horaires pour minimiser les inconvénients pour tes locataires ou clients.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
         Est-ce que vous offrez une garantie?
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
       </div>
-      <div class="faq-a">Oui — notre engagement est simple : si vous n'êtes pas satisfait du résultat, vous ne payez pas. Nous sommes confiants dans la qualité de notre travail et de notre produit. Nous prenons le temps de bien faire le travail du premier coup.</div>
+      <div class="faq-a">Oui — notre engagement est simple : si tu n'es pas satisfait du résultat, tu ne paies pas. On est confiants dans la qualité de notre travail et de notre produit. On prend le temps de bien faire le travail du premier coup.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Comment se passe la soumission?
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </div>
+      <div class="faq-a">Tu appelles ou envoies ton adresse. On passe évaluer gratuitement, on te donne un prix fixe, et tu décides sans pression. Si tu acceptes, on planifie une date selon ta disponibilité.</div>
     </div>
   </section>
 
   <!-- Contact -->
   <section class="contact" id="contact">
-    <h3>Contact</h3>
-    <p>Appelez-nous directement pour une estimation gratuite. Votre expert sur la Rive-Nord.</p>
+    <h2 style="font-family:var(--font-display);font-size:30px;font-weight:700;text-transform:uppercase;margin-bottom:8px;">Soumission <span style="color:var(--brand-red)">Gratuite</span></h2>
+    <p>Appelle-nous ou laisse ton adresse — on te rappelle dans la journée. Pas d'obligation, pas de pression.</p>
     <div class="contact-list">
       <a href="tel:+14383048896" class="contact-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <div>
-          <div class="label">Téléphone</div>
+          <div class="label">Téléphone — réponse rapide garantie</div>
           <div class="value">438-304-8896</div>
         </div>
       </a>
       <div class="contact-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         <div>
-          <div class="label">Secteur</div>
-          <div class="value">Rive-Nord, QC, Canada</div>
+          <div class="label">Zone desservie</div>
+          <div class="value">Rive-Nord · Laurentides · Lanaudière</div>
         </div>
       </div>
-      <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="contact-item">
+      <a href="https://www.facebook.com/scellant.asphalte" target="_blank" rel="noopener noreferrer" class="contact-item">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
         <div>
           <div class="label">Facebook</div>
@@ -919,6 +1269,7 @@
         </div>
       </a>
     </div>
+    <p style="margin-top:20px;font-size:13px;color:rgba(245,245,245,0.4);">Ou utilise le bouton "Estimation gratuite" ci-haut pour envoyer ton adresse directement.</p>
   </section>
 
   <!-- Final CTA -->
@@ -933,21 +1284,93 @@
     </div>
   </section>
 
+  <!-- Final CTA update -->
+
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-inner">
-      <p>© 2026 scellant-asphalte — Tous droits réservés.</p>
-      <div class="footer-links">
-        <a href="#pourquoi">Pourquoi sceller?</a>
-        <a href="#blog">Conseils</a>
-        <a href="#faq">FAQ</a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+    <div class="footer-inner" style="flex-direction:column;gap:0;">
+      <div style="display:grid;grid-template-columns:1fr;gap:40px;width:100%;max-width:1152px;margin:0 auto;padding:48px 16px 32px;text-align:left;">
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:32px;flex-wrap:wrap;">
+          <div>
+            <img src="assets/logo-sa.png" alt="Logo Scellant-Asphalte" style="width:80px;height:80px;border-radius:50%;margin-bottom:16px;">
+            <p style="font-size:13px;color:rgba(245,245,245,0.5);line-height:1.7;margin-bottom:16px;">Spécialistes du scellant à base de bitume haut de gamme. Rive-Nord, Laurentides &amp; Lanaudière. Satisfait ou tu ne paies pas.</p>
+            <a href="tel:+14383048896" style="font-size:15px;font-weight:700;color:var(--brand-red-glow);">438-304-8896</a>
+          </div>
+          <div>
+            <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(245,245,245,0.4);margin-bottom:16px;">Services</p>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <a href="services-scellant-asphalte.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Scellant résidentiel</a>
+              <a href="services-scellant-asphalte.html#commercial" style="font-size:13px;color:rgba(245,245,245,0.6);">Scellant commercial</a>
+              <a href="services-scellant-asphalte.html#fissures" style="font-size:13px;color:rgba(245,245,245,0.6);">Réparation fissures</a>
+              <a href="services-scellant-asphalte.html#nids" style="font-size:13px;color:rgba(245,245,245,0.6);">Réparation nids-de-poule</a>
+              <a href="a-propos.html" style="font-size:13px;color:rgba(245,245,245,0.6);">À propos</a>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(245,245,245,0.4);margin-bottom:16px;">Villes</p>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <a href="scellant-asphalte-blainville.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Blainville</a>
+              <a href="scellant-asphalte-sainte-therese.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Sainte-Thérèse</a>
+              <a href="scellant-asphalte-saint-eustache.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Saint-Eustache</a>
+              <a href="scellant-asphalte-boisbriand.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Boisbriand</a>
+              <a href="scellant-asphalte-mirabel.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Mirabel</a>
+              <a href="scellant-asphalte-terrebonne.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Terrebonne</a>
+              <a href="scellant-asphalte-laval.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Laval</a>
+              <a href="scellant-asphalte-saint-jerome.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Saint-Jérôme</a>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(245,245,245,0.4);margin-bottom:16px;">Infos</p>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <a href="pourquoi-asphalte-fissure-quebec.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Pourquoi ça fissure?</a>
+              <a href="quand-sceller-asphalte.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Quand sceller?</a>
+              <a href="reparation-fissures-asphalte.html" style="font-size:13px;color:rgba(245,245,245,0.6);">Réparation fissures</a>
+              <a href="#faq" style="font-size:13px;color:rgba(245,245,245,0.6);">FAQ</a>
+              <a href="#avis" style="font-size:13px;color:rgba(245,245,245,0.6);">Avis clients</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.05);width:100%;padding:20px 16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+        <p style="font-size:13px;color:rgba(245,245,245,0.4);">© 2026 Scellant-Asphalte — Tous droits réservés · Rive-Nord, QC</p>
+        <a href="https://www.facebook.com/scellant.asphalte" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(245,245,245,0.5);">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
           Facebook
         </a>
       </div>
     </div>
   </footer>
+
+  <!-- Estimation Modal -->
+  <div class="modal-overlay" id="estimModal" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal">
+      <button class="modal-close" onclick="document.getElementById('estimModal').classList.remove('open')" aria-label="Fermer">&times;</button>
+      <h2>Estimation <span>gratuite</span></h2>
+      <p class="modal-subtitle">Réponse en moins d'une heure · Rive-Nord</p>
+
+      <a href="tel:+14383048896" class="modal-call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <div>
+          438-304-8896
+          <small>Appel direct — disponible maintenant</small>
+        </div>
+      </a>
+
+      <div class="modal-divider">ou laissez votre adresse</div>
+
+      <form class="modal-form" id="estimForm" onsubmit="submitEstim(event)">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="tel" name="tel" placeholder="Téléphone" required>
+        <input type="text" name="adresse" placeholder="Adresse complète (ex: 123 rue des Érables, Blainville)" required>
+        <textarea name="details" rows="3" placeholder="Détails supplémentaires (facultatif)"></textarea>
+        <button type="submit" class="modal-submit" id="estimSubmit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Envoyer ma demande
+        </button>
+        <p class="modal-success" id="estimSuccess">✓ Demande envoyée ! On vous rappelle sous peu.</p>
+      </form>
+    </div>
+  </div>
 
   <script>
     function toggleFaq(el) {
@@ -962,6 +1385,40 @@
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
       });
     });
+
+    async function submitEstim(e) {
+      e.preventDefault();
+      const btn = document.getElementById('estimSubmit');
+      const success = document.getElementById('estimSuccess');
+      const form = e.target;
+      const data = Object.fromEntries(new FormData(form));
+
+      btn.disabled = true;
+      btn.textContent = 'Envoi en cours…';
+
+      try {
+        const body = `Nouvelle demande d'estimation\n\nNom: ${data.nom}\nTéléphone: ${data.tel}\nAdresse: ${data.adresse}\nDétails: ${data.details || '—'}`;
+        await fetch('https://formsubmit.co/ajax/wisemanimpact@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            _subject: 'Demande d\'estimation — Scellant-Asphalte',
+            _captcha: 'false',
+            nom: data.nom,
+            telephone: data.tel,
+            adresse: data.adresse,
+            details: data.details || '—'
+          })
+        });
+        form.reset();
+        success.style.display = 'block';
+        btn.style.display = 'none';
+      } catch(err) {
+        btn.disabled = false;
+        btn.innerHTML = 'Envoyer ma demande';
+        alert('Erreur d\'envoi. Appelez-nous directement au 438-304-8896.');
+      }
+    }
   </script>
 </body>
 </html>
