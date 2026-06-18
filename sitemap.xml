@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Pages principales -->
+  <!--  Pages principales  -->
   <url>
     <loc>https://scellant-asphalte.ca/</loc>
     <lastmod>2026-06-01</lastmod>
@@ -21,7 +21,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Pages locales — Rive-Nord -->
+  <!--  Pages locales — Rive-Nord  -->
   <url>
     <loc>https://scellant-asphalte.ca/scellant-asphalte-rive-nord</loc>
     <lastmod>2026-06-01</lastmod>
@@ -52,53 +52,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
-    <loc>https://scellant-asphalte.ca/scellant-asphalte-laval</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
 
-  <!-- Pages locales — Laurentides -->
+  <!--  Articles de blogue  -->
   <url>
-    <loc>https://scellant-asphalte.ca/scellant-asphalte-mirabel</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://scellant-asphalte.ca/scellant-asphalte-saint-jerome</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Pages locales — Lanaudière -->
-  <url>
-    <loc>https://scellant-asphalte.ca/scellant-asphalte-terrebonne</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Articles de blogue -->
-  <url>
-    <loc>https://scellant-asphalte.ca/pourquoi-asphalte-fissure-quebec</loc>
+    <loc>https://scellant-asphalte.ca/cout-scellement-asphalte</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://scellant-asphalte.ca/quand-sceller-asphalte</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://scellant-asphalte.ca/reparation-fissures-asphalte</loc>
-    <lastmod>2026-06-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
 </urlset>
